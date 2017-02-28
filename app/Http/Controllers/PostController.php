@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 
 use App\Post;
 
+use Sesssion;
+
 class PostController extends Controller
 {
     /**
@@ -46,6 +48,9 @@ class PostController extends Controller
             'title' => 'required|max:255',
             'body'  => 'required'
             ));
+
+        //validation
+        
         $post =new Post;
 
         $post->title = $request->title;
@@ -53,6 +58,8 @@ class PostController extends Controller
         $post->body = $request->body;
 
         $post->save();
+
+        Session::flash('Success', 'The blog post was sucessflly saved');
 
         return redirect()->route('posts.show',$post->id);
 
@@ -66,7 +73,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        
+         return view('posts.show');
+
     }
 
     /**

@@ -1,4 +1,4 @@
-php<?php
+<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -13,3 +13,5 @@ php<?php
 
 Route::get('/', 'PagesController@getIndex');
 Route::resource('posts','PostController');
+
+?>
