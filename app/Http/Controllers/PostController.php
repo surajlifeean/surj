@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 
 use App\Post;
 
-use Sesssion;
+use Session;
 
 class PostController extends Controller
 {
@@ -59,7 +59,7 @@ class PostController extends Controller
 
         $post->save();
 
-        Session::flash('Success', 'The blog post was sucessflly saved');
+        Session::flash('success','The blog post was sucessflly saved!');
 
         return redirect()->route('posts.show',$post->id);
 
@@ -73,7 +73,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-         return view('posts.show');
+        $post = Post::find($id);
+         return view('posts.show')->withPost($post);
 
     }
 

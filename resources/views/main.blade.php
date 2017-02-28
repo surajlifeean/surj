@@ -51,6 +51,9 @@
 
 <h1></h1>
 <div class="container">
+
+   @include('partials._messages')
+   
    @yield('content')
 
 
