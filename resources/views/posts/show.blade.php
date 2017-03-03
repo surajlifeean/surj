@@ -11,6 +11,7 @@
 
 
  </script>
+
  <div class="row">
 	<div class="col-md-8"
 
@@ -33,10 +34,11 @@
 
             <div class="row">
                  <div class="col-sm-6">
-                  <a href="#" class="btn btn-primary btn-block">Edit</a>
+                 {!! Html::LinkRoute('posts.edit','Edit Post',array($post->id),array('class'=>"btn btn-primary btn-block"))!!}
+            
                   </div>
                   <div class="col-sm-6">
-                  <a href="#" class="btn btn-danger btn-block">Delete</a>
+                  {!! Html::LinkRoute('posts.destroy','Delete Post',array($post->id),array('class'=>"btn btn-primary btn-block"))!!}
                   </div>
 
 		</div>
