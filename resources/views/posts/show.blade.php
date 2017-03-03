@@ -4,16 +4,11 @@
 
 @section('content')
 
- <script>
- 		$(function(){
- 			$('#bs-example-navbar-collapse-1').html('');
- 		});
+@include('partials._kindofnav')
 
-
- </script>
 
  <div class="row">
-	<div class="col-md-8"
+	<div class="col-md-8">
 
     	<h1>{{$post->title}}</h1>
 

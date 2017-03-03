@@ -30,14 +30,7 @@
 {!! Form::close() !!}
   </div>
  </div>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
- <script>
- 		$(function(){
- 			$('#bs-example-navbar-collapse-1').html('');
- 		});
-
-
- </script>
+@include('partials._kindofnav')
 
 @endsection
 
