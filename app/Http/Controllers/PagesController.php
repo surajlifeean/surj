@@ -4,7 +4,7 @@
  class PagesController extends Controller {
 
  	public function getIndex(){
- 		return view('posts.login');
+ 		return view('posts.home');
  	}
  }
 ?>

@@ -1,27 +1,28 @@
 @extends('main')
 
-@section('title','|View Post')
+@section('title', '|Edit Post')
 
 @section('content')
+
 
 @include('partials._kindofnav')
 
 
+ <link rel="stylesheet" href="css/styles.css">
  <div class="row">
+    {!! Form::model($post,['route'=>['posts.update',$post->id],'method'=>'PUT'])!!}
+
   	<div class="col-md-8">
 
-    	<h1>{{$post->title}}</h1>
+  	{{Form::label('title', 'Title:')}}
+    
+  	{{Form::text('title', null, ["class"=>'form-control input-lg'])}}
 
-		<p class="lead"> {{ $post->body}}</p>
+  	{{ Form::label('body', 'Body:',['class'=>'form-spacing-top'])}}
+
+
+     {{Form::textarea('body', null, ["class"=>'form-control'])}}
 	  </div>
-
-
-
-
-
-
-
-
   
 	<div class="col-md-4">
 		<div class="well">
@@ -39,17 +40,20 @@
 
             <div class="row">
                  <div class="col-sm-6">
-                 {!! Html::LinkRoute('posts.edit','Edit Post',array($post->id),array('class'=>"btn btn-primary btn-block form-spacing-top"))!!}
+                 {!! Html::LinkRoute('posts.show','Cancel',array($post->id),array('class'=>"btn btn-danger btn-block"))!!}
                  </div>
 
                   <div class="col-sm-6">
-                  {!! Html::LinkRoute('posts.destroy','Delete Post',array($post->id),array('class'=>"btn btn-primary btn-block form-spacing-top"))!!}
+                  {{Form::submit('Save Changes',array('class'=>"btn btn-success btn-block"))}}
                   </div>
 
 		        </div>
 	  </div>
 
   </div>
+
+  {!!Form::close()!!}
 </div>
 
-@endsection
+
+@stop

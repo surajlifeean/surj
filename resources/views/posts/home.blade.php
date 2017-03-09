@@ -5,7 +5,7 @@
     <div class="row">
        <div class="col-md-12">
          <div class="jumbotron">
-           <h1>TIER5</h1>
+           <h1>CAMPU-CORPO</h1>
              <p>...</p>
               <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
          </div>
