@@ -14,14 +14,6 @@
 
 		<p class="lead"> {{ $post->body}}</p>
 	  </div>
-
-
-
-
-
-
-
-
   
 	<div class="col-md-4">
 		<div class="well">
@@ -43,10 +35,21 @@
                  </div>
 
                   <div class="col-sm-6">
-                  {!! Html::LinkRoute('posts.destroy','Delete Post',array($post->id),array('class'=>"btn btn-primary btn-block form-spacing-top"))!!}
+                        {!! Form::open(['route'=>['posts.destroy',$post->id],'method'=>'DELETE'])!!}
+
+
+                           {!!Form::submit('Delete',array('class'=> 'btn btn-danger btn-block form-spacing-top'))!!}
+
+                    {!!Form::close()!!}
                   </div>
 
 		        </div>
+            <div class="row">
+                <div class="col-sm-12">
+                      {!! Html::LinkRoute('posts.index','View All Post','',array('class'=>"btn btn-default btn-block form-spacing-top"))!!}
+
+                </div>
+            </div>
 	  </div>
 
   </div>

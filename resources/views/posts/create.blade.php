@@ -20,7 +20,8 @@
 
     {{ Form::text('title',null,array('class'=>'form-control','required'=>''))}}
 
-    {{ Form::label('body',"Post Body:")}}
+    {{ Form::label('body',"Post Body:",array('class'=>'form-spacing-top'))}}
+
     {{ Form::textarea('body',null,array('class'=>'form-control','required'=>''))}}
 
 

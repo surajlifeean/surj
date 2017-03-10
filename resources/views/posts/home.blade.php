@@ -5,26 +5,28 @@
     <div class="row">
        <div class="col-md-12">
          <div class="jumbotron">
-           <h1>CAMPU-CORPO</h1>
-             <p>...</p>
-              <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-         </div>
-       </div>
+            
+              <h1 class="animated infinite bounce">Techie'sfoo</h1>
+            
+              
+              <p><a class="btn btn-primary btn-lg form-spacing-top" href="posts/create" role="button">Post Content</a></p>
+            </div>
+        </div>
     </div>
     <div class="row">
        <div class="col-md-8">
          <div class="post">
-           <h1 id="services">Services</h1>
+           <h1 id="services">Post Title</h1>
              <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="#" role="button">more</a></p>
+              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
          </div>
        </div>
         <hr>
        <div class="col-md-8">
          <div class="post">
-           <h1 id="about"> About</h1>
+           <h1 id="about">Post Title</h1>
              <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="#" role="button">more</a></p>
+              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
          </div>
        </div>
  
@@ -32,38 +34,38 @@
     
        <div class="col-md-8">
          <div class="post">
-           <h1 id="process">Process</h1>
+           <h1 id="process">Post Title</h1>
              <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="#" role="button">more</a></p>
+              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
          </div>
        </div>
       
        <div class="col-md-8">
          <div class="post">
-           <h1 id="product">Products</h1>
+           <h1 id="product">Post Title</h1>
              <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="#" role="button">more</a></p>
+              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
          </div>
        </div>
        <div class="col-md-8">
          <div class="post">
-           <h1 id="work">Work</h1>
+           <h1 id="work">Post Title</h1>
              <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="#" role="button">more</a></p>
+              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
          </div>
         </div>
          <div class="col-md-8">
          <div class="post">
-           <h1 id="Testimonials">Testimonials</h1>
+           <h1 id="Testimonials">Post Title</h1>
              <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="#" role="button">more</a></p>
+              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
          </div>
         </div>
          <div class="col-md-8">
          <div class="post">
-           <h1 id="contact">Contact</h1>
+           <h1 id="contact">Post Title</h1>
              <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="posts/create" role="button">more</a></p>
+              <p><a class="btn btn-primary" href="posts/create" role="button">read more</a></p>
          </div>
         </div> 
 
