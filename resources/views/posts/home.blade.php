@@ -14,61 +14,20 @@
         </div>
     </div>
     <div class="row">
-       <div class="col-md-8">
-         <div class="post">
-           <h1 id="services">Post Title</h1>
-             <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
-         </div>
-       </div>
-        <hr>
-       <div class="col-md-8">
-         <div class="post">
-           <h1 id="about">Post Title</h1>
-             <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
-         </div>
-       </div>
- 
-         <hr>
+
+         @foreach($posts as $post)
+            
     
        <div class="col-md-8">
          <div class="post">
-           <h1 id="process">Post Title</h1>
-             <p>he have lots of services to offer</p>
+           <h1 id="process">{{$post->title}}  </h1>
+             <p>{{substr($post->body,0,200)}}{{strlen($post->body)>200? "...":""}}</p>
               <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
          </div>
        </div>
+       <hr>
+       @endforeach
       
-       <div class="col-md-8">
-         <div class="post">
-           <h1 id="product">Post Title</h1>
-             <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
-         </div>
-       </div>
-       <div class="col-md-8">
-         <div class="post">
-           <h1 id="work">Post Title</h1>
-             <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
-         </div>
-        </div>
-         <div class="col-md-8">
-         <div class="post">
-           <h1 id="Testimonials">Post Title</h1>
-             <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
-         </div>
-        </div>
-         <div class="col-md-8">
-         <div class="post">
-           <h1 id="contact">Post Title</h1>
-             <p>he have lots of services to offer</p>
-              <p><a class="btn btn-primary" href="posts/create" role="button">read more</a></p>
-         </div>
-        </div> 
-
      <!-- <div class="col-md-3 col-md-offset-1">
          <div class="post">
            <h1>Notification</h1>

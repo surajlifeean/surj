@@ -1,4 +1,7 @@
 @include('partials._head')
+
+
+
   <body>
   <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -60,7 +63,7 @@
 
    
    <hr>
-   <p class="text-center">Copyright Tier5-All Rights Reserved</p>
+   <p class="text-center">Copyright Techie'sfoo-All Rights Reserved</p>
 
 </div>  
 

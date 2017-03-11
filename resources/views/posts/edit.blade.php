@@ -18,6 +18,11 @@
     
   	{{Form::text('title', null, ["class"=>'form-control input-lg'])}}
 
+
+    {{Form::label('slug', 'Slug:')}}
+    
+    {{Form::text('slug', null, ["class"=>'form-control','required'=>'','minlength'=>'5', 'maxlength'=>'255'])}}
+
   	{{ Form::label('body', 'Body:',['class'=>'form-spacing-top'])}}
 
 
