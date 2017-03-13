@@ -3,15 +3,18 @@
 @section('title','|Homepage')
 @section('content')
     <div class="row">
-       <div class="col-md-12">
-         <div class="jumbotron">
+     <div class="col-md-12 ">
+
+         <div class="jumbotron darkslateblue">
             
-              <h1 class="animated infinite bounce">Techie'sfoo</h1>
+              <h1 class="animated infinite bounce" >Techie'sfoo</h1>
             
               
-              <p><a class="btn btn-primary btn-lg form-spacing-top" href="posts/create" role="button">Post Content</a></p>
-            </div>
+              <p>
+              <a class="btn btn-primary btn-lg form-spacing-top" href="posts/create" role="button">Post Content</a>
+              </p>
         </div>
+      </div>
     </div>
     <div class="row">
 
@@ -22,10 +25,11 @@
          <div class="post">
            <h1 id="process">{{$post->title}}  </h1>
              <p>{{substr($post->body,0,200)}}{{strlen($post->body)>200? "...":""}}</p>
-              <p><a class="btn btn-primary" href="#" role="button">read more</a></p>
+              <p><a class="btn btn-primary" href="{{url('blog/'.$post->slug)}}" role="button">read more</a></p>
+              <hr>
          </div>
        </div>
-       <hr>
+       
        @endforeach
       
      <!-- <div class="col-md-3 col-md-offset-1">

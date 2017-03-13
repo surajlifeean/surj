@@ -1,6 +1,5 @@
 @include('partials._head')
-
-
+@include('pages.contact')
 
   <body>
   <nav class="navbar navbar-default">
@@ -35,7 +34,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#work">Work</a></li>
         <li><a href="#Testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a  data-toggle="modal" data-target="#myModal" href="#">Contact</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">my account<span class="caret"></span></a>
           <ul class="dropdown-menu">
