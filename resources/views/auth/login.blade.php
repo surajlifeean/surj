@@ -1,5 +1,7 @@
 @extends('main')
 
+@include('auth.passwords._forgotpwd')
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -9,7 +11,7 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('auth/login') }}">
                         {{ csrf_field() }}
-
+                        <div class="tobehidden">
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
@@ -48,13 +50,17 @@
                             </div>
                         </div>
 
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-sign-in"></i> Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                                <a class="btn btn-link " data-toggle="modal" data-target="#myModal2">Forgot Your Password?</a>
+                                
+
                             </div>
                         </div>
                     </form>

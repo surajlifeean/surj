@@ -33,7 +33,11 @@ Route::post('auth/register','Auth\AuthController@postRegister');
  Route::get('/', 'PagesController@getIndex');
  Route::resource('posts','PostController');
 
-
+//password reset request
+ 
+ route::get('password/reset/{token?}','Auth\PasswordController@showResetForm');
+ route::post('password/email','Auth\PasswordController@SendResetLinkEmail');
+ route::post('password/reset','Auth\PasswordController@reset');
 
 
 ?>

@@ -55,7 +55,8 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' =>'surajjeswara2@yahoo.com', 'name' =>'laravel Application'
+    ],
 
     /*
     |--------------------------------------------------------------------------
