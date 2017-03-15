@@ -59,7 +59,8 @@
                                 </button>
 
                                 <a class="btn btn-link " data-toggle="modal" data-target="#myModal2">Forgot Your Password?</a>
-                                
+                                <br>
+                                <a class="" href="{{URL('auth/register')}}">I am New. Register!</a>
 
                             </div>
                         </div>
