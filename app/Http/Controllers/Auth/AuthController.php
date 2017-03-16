@@ -77,11 +77,12 @@ class AuthController extends Controller
     {
         return view('auth.login');
     }
-           public function getRegister()
+        public function getRegister()
     {
         return view('auth.register');
     }
 
+     
         
 
 }
