@@ -4,6 +4,8 @@
 
 @section('content')
 
+@include('partials._messages')
+
 @include('partials._kindofnav')
 
 <div class="row">

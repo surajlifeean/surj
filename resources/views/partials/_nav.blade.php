@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Services <span class="sr-only"></span></a></li>
-        <li><a href="blog">Blogs</a></li>
+        <li><a href="{{route('blog.index')}}">Blogs</a></li>
         <li><a href="#Process">Process</a></li>
         
 
@@ -36,11 +36,10 @@
 
         
         @if(Auth::check())
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello {{ Auth::user()->name}}<span class="caret"></span></a>
+
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello {{ ucwords(Auth::user()->name)}}<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="posts">Posts</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="{{Url('auth/logout')}}">logout</a></li>
           </ul>

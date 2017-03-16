@@ -3,10 +3,20 @@
 @include('auth.passwords._forgotpwd')
 
 @section('content')
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
+
+
+                
+          @if(session('status'))
+           <div class="alert alert-success">
+            {{ session('status') }}
+
+           </div>
+           @endif
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('auth/login') }}">
