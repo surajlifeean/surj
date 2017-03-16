@@ -41,6 +41,12 @@
           <ul class="dropdown-menu">
             <li><a href="posts">Posts</a></li>
             <li role="separator" class="divider"></li>
+
+
+            <li><a href="{{route('categories.index')}}">My Categories</a></li>
+            <li role="separator" class="divider"></li>
+
+
             <li><a href="{{Url('auth/logout')}}">logout</a></li>
           </ul>
 

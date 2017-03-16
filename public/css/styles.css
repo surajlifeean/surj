@@ -11,3 +11,11 @@
 {
 	 color: green;
 }
+
+.bs-example{
+    	margin: 20px;
+    }
+ .modal-content iframe{
+        margin: 0 auto;
+        display: block;
+    }

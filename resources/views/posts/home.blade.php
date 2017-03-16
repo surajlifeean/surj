@@ -5,14 +5,16 @@
     <div class="row">
      <div class="col-md-12 ">
 
-         <div class="jumbotron darkslateblue">
+         <div class="jumbotron darkslateblue bs-example">
             
               <h1 class="animated infinite bounce" >Techie'sfoo</h1>
             
               
               <p>
-              <a class="btn btn-primary btn-lg form-spacing-top" href="posts/create" role="button">Post Content</a>
+              <a class="btn btn-primary btn-lg form-spacing-top" href="#myModal2" data-toggle="modal" role="button">How To Start?</a>
               </p>
+              @include('partials._demovideo')
+
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 @extends('main')
+
 @section('title',"|$post->title")
 
 @section('content')
@@ -8,12 +9,10 @@
 				</h1>
 				<p>{{$post->body}}
 				</p>
-<hr>
-				<p>Posted in:{{$post->category->name }}
+                 <hr>
+				<p>Posted in:{{ $post->category->name }}
 				</p>
 
 		</div>
-
-
-
+	</div>
 @endsection

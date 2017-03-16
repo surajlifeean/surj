@@ -39,5 +39,7 @@ Route::post('auth/register','Auth\AuthController@postRegister');
  route::post('password/email','Auth\PasswordController@SendResetLinkEmail');
  route::post('password/reset','Auth\PasswordController@reset');
 
+//categories
 
+ Route::resource('categories','CategoryController',['except'=>['create']]);
 ?>
