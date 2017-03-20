@@ -6,30 +6,32 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Category;
+use App\Tag;
 
 use Session;
-class CategoryController extends Controller
+
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+
+
+
      */
 
-    public function __construct(){
+     public function __construct(){
         $this->middleware('auth');
     }
 
 
+
     public function index()
     {
-        //display a view of all of our category
-
-        $categories= Category::all();
-
-        return view('categories.index')->withCategories($categories);
-
+        //
+        $tags=Tag::all();
+        return view('tags.index')->withTags($tags);
     }
 
     /**
@@ -37,7 +39,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+    public function create()
+    {
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -47,21 +52,18 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //save a new category and redirect back to index
+        //
         $this->validate($request,array(
             'name'=>'required|max:255'
             ));
-        
-        $category= new Category;
 
-        $category->name=$request->name;
+        $tags=new Tag;
+        $tags->name=$request->name;
+        $tags->save();
 
-        $category->save();
+        Session::flash('success','New tag has been created');
 
-        Session::flash('success','New category has been created');
-
-        return redirect()->route('categories.index');
-
+        return redirect()->route('tags.index');
 
     }
 
@@ -109,13 +111,15 @@ class CategoryController extends Controller
     {
         //
 
-        $categories=Category::find($id);
-
-        $categories->delete();
-
-        Session::flash('Success','The Category is deleted');
 
 
-        return redirect()->route('categories.index');
+        $tags=Tag::find($id);
+
+        $tags->delete();
+
+        Session::flash('Success','The Tag is deleted');
+
+
+        return redirect()->route('tags.index');
     }
 }

@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -42,4 +41,8 @@ Route::post('auth/register','Auth\AuthController@postRegister');
 //categories
 
  Route::resource('categories','CategoryController',['except'=>['create']]);
+
+ Route::resource('tags','TagController',['except'=>['create']]);
+
+ 
 ?>

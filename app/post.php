@@ -11,4 +11,11 @@ class post extends Model
     {
     	return $this->belongsTo('App\category');
     }
+
+    public function tags()
+    {
+    	return $this->belongsToMany('App\Tag');
+    }
 }
+
+?>

@@ -1,13 +1,13 @@
 @extends('main')
 
-@section('title','|All Categories')
+@section('title','|Manage Tags')
 
 @section('content')
 	
 	<div class="row">
 		<div class="col-md-8">
 			<table class="table">
-			<h1> My Categories</h1>
+			<h1> My Tags</h1>
 			<thead>
 				<tr>
 					<th>#</th>
@@ -16,25 +16,28 @@
 			</thead>
 
 
-            @foreach($categories as $category)
+            @foreach($tags as $tag)
 
 			<tbody>
 				<tr>
-					<th> {{$category->id}} </th>
+					<th> {{$tag->id}} </th>
 					<th>
-						{{$category->name}}
+						{{$tag->name}}
 					</th>
 					
 					<th>
 
 
-                    {!! Form::open(['route'=>['categories.destroy',$category->id], 'method'=>'DELETE'])!!}
+                    {!! Form::open(['route'=>['tags.destroy',$tag->id], 'method'=>'DELETE'])!!}
 
-			 			{{Form::submit('Delete',['class'=>'btn btn-info'])}}
+			 			{{Form::submit('Delete',['class'=>'btn btn-default btn-sm'])}}
 
 
 					{!!Form::close()!!}
   			      
+					</th>
+					<th>
+						<a href="{{route('tags.edit',$tag->id)}}" class="btn btn-default btn-sm">Edit</a>
 					</th>
 				</tr>
 			</tbody>
@@ -50,11 +53,11 @@
 
 		<div class="col-md-3">
 			<div class="well">
-				{!! Form::open(['route'=>'categories.store', 'method'=>'POST'])!!}
-				<h2>New Category</h2>
+				{!! Form::open(['route'=>'tags.store', 'method'=>'POST'])!!}
+				<h2>New Tags</h2>
 					{{ Form::label('name',' Name:')}}
 					{{Form::text('name',null,['class'=>'form-control'])}}
-					{{Form::submit('Add Category',['class'=>'btn btn-primary form-spacing-top'])}}
+					{{Form::submit('Add Tags',['class'=>'btn btn-primary form-spacing-top'])}}
 					
 
 					{!!Form::close()!!}

@@ -1,9 +1,19 @@
+
 @extends('main')
 
 @section('title', '|Edit Post')
 
-@section('content')
+@section('stylesheets')
 
+    {!!Html::style('css/parsley.css')!!}
+
+      {!!Html::style('css/select2.css')!!}
+
+@endsection
+
+
+
+@section('content')
 
 @include('partials._kindofnav')
 
@@ -34,10 +44,15 @@
     </select>
 
 
-  	{{ Form::label('body', 'Body:',['class'=>'form-spacing-top'])}}
+    {{Form::label('tags','Tags:')}}
+
+  
+
+  	{{ Form::label('body', 'Body:',['class'=>'form-spacing-top'])
+    }}
 
 
-     {{Form::textarea('body', null, ["class"=>'form-control'])}}
+     {{Form::textarea('body', null, ['class'=>'form-control'])}}
 	  </div>
   
 	<div class="col-md-4">
@@ -51,7 +66,7 @@
 
             <dl class="dl-horizontal">
                <dt>last Updated:</dt>
-                <dd>{{date('jS M, Y',strtotime($post->updated_at))}}</dd>
+                <dd>{{date('jS M, Y', strtotime($post->updated_at))}}</dd>
             </dl>
 
             <div class="row">
@@ -73,3 +88,18 @@
 
 
 @stop
+
+
+@section('scripts')
+  {!! Html::script('js/parsley.min.js')!!}
+  {!! Html::script('js/select2.js')!!}    
+
+<script type="text/javascript">
+
+$('.select2-multi').select2();
+
+$('.select2-multi').select2().val({!!json_encode($post->tags()->getRelatedIds())!!}).trigger('change');
+
+</script>
+    
+@endsection

@@ -14,6 +14,10 @@ use Session;
 
 use App\Category;
 
+use App\Tag;
+
+use DB;
+
 class PostController extends Controller
 {
     /**
@@ -46,7 +50,8 @@ class PostController extends Controller
     {
         //
         $categories=Category::all();
-        return view('posts.create')->withCategories($categories);
+        $tags=Tag::all();
+        return view('posts.create')->withCategories($categories)->withTags($tags);
     }
 
     /**
@@ -57,6 +62,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $this->validate($request, array(
             'title' => 'required|max:255',
             'slug'  => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
@@ -67,6 +74,7 @@ class PostController extends Controller
         //validation
         
         $post =new Post;
+        
 
         $post->title =ucwords($request->title);
 
@@ -77,6 +85,10 @@ class PostController extends Controller
         $post->body = $request->body;
 
         $post->save();
+
+        $post->tags()->sync($request->tags,false);
+
+
 
         Session::flash('success','The blog post was sucessflly saved!');
 
@@ -105,12 +117,23 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+
+
         
     $post=Post::find($id);
 
     $categories=Category::all();
 
-    return view('posts.edit')->withPost($post)->withCategories($categories);
+    $tags=Tag::all();
+    $tags2=array();
+
+    foreach ($tags as $tag) {
+        $tags2[$tag->id]=$tag->name;
+
+    }
+
+
+    return view('posts.edit')->withPost($post)->withCategories($categories)->withTags($tags2);
     }
 
     /**
