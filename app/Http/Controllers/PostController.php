@@ -130,7 +130,11 @@ class PostController extends Controller
     foreach ($tags as $tag) {
         $tags2[$tag->id]=$tag->name;
 
+        echo $tags2[$tag->id];
+
     }
+    print_r($tags2);
+
 
 
     return view('posts.edit')->withPost($post)->withCategories($categories)->withTags($tags2);

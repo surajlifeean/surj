@@ -44,7 +44,21 @@
     </select>
 
 
+
     {{Form::label('tags','Tags:')}}
+
+
+
+     <select class="form-control select2-multi" name="tags[]" multiple="multiple">
+    
+    @foreach($tags as $tag=>$tag_val)
+
+                  <option value=$tag> {{$tag_val}} </option>
+  
+    @endforeach
+    </select>
+   
+  
 
   
 
@@ -95,11 +109,7 @@
   {!! Html::script('js/select2.js')!!}    
 
 <script type="text/javascript">
-
-$('.select2-multi').select2();
-
-$('.select2-multi').select2().val({!!json_encode($post->tags()->getRelatedIds())!!}).trigger('change');
-
-</script>
-    
+    $('.select2-multi').select2();
+    $('.select2-multi').select2().val({!! json_encode($post->tags()->getRelatedIds()) !!}).trigger('change');
+  </script>  
 @endsection
