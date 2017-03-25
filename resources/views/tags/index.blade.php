@@ -2,6 +2,8 @@
 
 @section('title','|Manage Tags')
 
+@include('tags.edit')
+
 @section('content')
 	
 	<div class="row">
@@ -22,7 +24,7 @@
 				<tr>
 					<th> {{$tag->id}} </th>
 					<th>
-						{{$tag->name}}
+						<a href="{{route('tags.show',$tag->id)}}">{{$tag->name}}</a>
 					</th>
 					
 					<th>
@@ -37,12 +39,15 @@
   			      
 					</th>
 					<th>
-						<a href="{{route('tags.edit',$tag->id)}}" class="btn btn-default btn-sm">Edit</a>
+						<button type="button" class="btn btn-default btn-sm " data-toggle="modal" data-target="#myModal2"  onclick='setvalue({!!json_encode($tag->name)!!},{!!json_encode($tag->id)!!})'>Edit</a>
+						
+
 					</th>
 				</tr>
 			</tbody>
 
 			@endforeach
+
 
 
 
@@ -64,5 +69,7 @@
 			</div>
 		</div>
 	</div>
+
+
 
 @endsection

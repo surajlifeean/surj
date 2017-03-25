@@ -19,6 +19,7 @@
 
 
  <link rel="stylesheet" href="css/styles.css">
+
  <div class="row">
     {!! Form::model($post,['route'=>['posts.update',$post->id],'method'=>'PUT'])!!}
 
@@ -53,7 +54,9 @@
     
     @foreach($tags as $tag=>$tag_val)
 
-                  <option value=$tag> {{$tag_val}} </option>
+                <?php
+                  echo "<option value='".$tag."'>".$tag_val."</option>";
+                  ?>
   
     @endforeach
     </select>
@@ -67,6 +70,8 @@
 
 
      {{Form::textarea('body', null, ['class'=>'form-control'])}}
+
+     
 	  </div>
   
 	<div class="col-md-4">
@@ -109,7 +114,14 @@
   {!! Html::script('js/select2.js')!!}    
 
 <script type="text/javascript">
-    $('.select2-multi').select2();
-    $('.select2-multi').select2().val({!! json_encode($post->tags()->getRelatedIds()) !!}).trigger('change');
-  </script>  
+$(document).ready(function() {
+  $(".select2-multi").select2();
+});
+
+$('.select2-multi').val({!!json_encode($post->tags()->getRelatedIds())!!}).trigger("change");
+
+
+
+</script>
+
 @endsection

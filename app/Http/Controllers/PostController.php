@@ -130,12 +130,10 @@ class PostController extends Controller
     foreach ($tags as $tag) {
         $tags2[$tag->id]=$tag->name;
 
-        echo $tags2[$tag->id];
-
     }
-    print_r($tags2);
 
 
+    
 
     return view('posts.edit')->withPost($post)->withCategories($categories)->withTags($tags2);
     }
@@ -149,7 +147,8 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+      
+      
         $post=Post::find($id);
 
         if($request->input('slug')==$post->slug){
@@ -195,9 +194,19 @@ class PostController extends Controller
          $post->slug = $request->slug;
 
          $post->category_id=$request->category_id;
+  
+
 
          $post->body=$request->input('body');
          $post->save();
+         
+         if(isset($request->tags)){
+         $post->tags()->sync($request->tags,true);
+         }
+         else
+            $post->tags()->sync(array());
+        
+         //false if we dont wanna overwrite the contents already in the database.
         //flash message for sucess save
         Session::flash('success','This post is updated');
         //redirect to post.show

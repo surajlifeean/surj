@@ -44,5 +44,6 @@ Route::post('auth/register','Auth\AuthController@postRegister');
 
  Route::resource('tags','TagController',['except'=>['create']]);
 
+
  
 ?>
