@@ -44,6 +44,7 @@ Route::post('auth/register','Auth\AuthController@postRegister');
 
  Route::resource('tags','TagController',['except'=>['create']]);
 
+ Route::post('comments/{post_id}',['uses'=>'CommentsController@store','as'=>'comments.store']);
 
  
 ?>

@@ -16,6 +16,11 @@ class post extends Model
     {
     	return $this->belongsToMany('App\Tag');
     }
+
+    public function comments()
+    {
+    	return $this->hasMany('App\Comment');
+    }
 }
 
 ?>

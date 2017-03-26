@@ -18,12 +18,12 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    
 
          @foreach($posts as $post)
             
-    
-       <div class="col-md-8">
+    <div class="row">
+       <div class="col-md-8" >
          <div class="post">
            <h1 id="process">{{ucwords($post->title)}}  </h1>
              <p>{{substr($post->body,0,200)}}{{strlen($post->body)>200? "...":""}}</p>
@@ -31,6 +31,8 @@
               <hr>
          </div>
        </div>
+
+    </div>
        
        @endforeach
       
@@ -43,5 +45,4 @@
        </div> -->
              
  
-    </div>
     @endsection
