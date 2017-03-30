@@ -10,7 +10,7 @@
 
 <div class="row">
 	<div class="col-md-10">
-		<h1>All Posts</h1>
+		<h1>Your Posts</h1>
 	</div>
 
      <div class="col-md-3">

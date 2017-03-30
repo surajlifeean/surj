@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 use App\Http\Requests;
 
 use App\Http\Controllers\Controller;
@@ -35,7 +37,13 @@ class PostController extends Controller
     public function index()
     {
         // create a variable and store ll the blog post into it
-        $posts = Post::all();
+
+          $id=Auth::user()->id;
+          
+          $posts = Post::where('users_id',$id)->get();
+
+
+
         //return it into the view
          return view('posts.index')->withPosts($posts);
 
@@ -83,6 +91,8 @@ class PostController extends Controller
         $post->category_id=$request->category_id;
 
         $post->body = $request->body;
+
+        $post->users_id = Auth::user()->id;
 
         $post->save();
 
