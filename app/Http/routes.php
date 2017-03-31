@@ -32,6 +32,8 @@ Route::post('auth/register','Auth\AuthController@postRegister');
  Route::get('/', 'PagesController@getIndex');
  Route::resource('posts','PostController');
 
+
+
 //password reset request
  
  route::get('password/reset/{token?}','Auth\PasswordController@showResetForm');

@@ -23,7 +23,7 @@
 	<h2>{{ $post->title}}</h2>
 
 
-	<h5 class="green"><b>Posted By:{{$post->name}}</b><br>Published on:{{ date('M j,Y', strtotime($post->created_at)) }}</h5>
+	<h5 class="green"><b>Posted By:{{$post->name}}</b><br>Published on:{{ date('M j,Y', strtotime($post->created_at)) }} <br><i>Category:{{$post->category->name}}</i></h5>
 
 	<p>
 	{{substr($post->body,0,250)}}  {{strlen($post->body)>250?"...":""}}

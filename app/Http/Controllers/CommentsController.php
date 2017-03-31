@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+
+use App\Comment;
 
 class CommentsController extends Controller
 {
@@ -34,10 +38,31 @@ class CommentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$post_id)
     {
-        //
-    }
+        
+
+         $this->validate($request, array(
+            'comment' => 'required|max:255'
+            ));
+
+        $comment=new Comment;
+
+        $comment->comment=$request->comment;
+
+        $comment->post_id=$post_id;
+
+        $comment->approved=false;
+
+        $comment->name=Auth::user()->name;
+
+        $comment->email=Auth::user()->email;
+
+        $comment->save();
+
+        return redirect()->route('blog.single',$request->slug);
+        
+     }
 
     /**
      * Display the specified resource.
