@@ -25,7 +25,7 @@
 
 	<h5 class="green"><b>Posted By:{{$post->name}}</b><br>Published on:{{ date('M j,Y', strtotime($post->created_at)) }} <br><i>Category:{{$post->category->name}}</i></h5>
 
-	<p>
+	<p class="blogbody animated bounceInLeft">
 	{{substr($post->body,0,250)}}  {{strlen($post->body)>250?"...":""}}
 	</p>
 
@@ -45,4 +45,14 @@
 </div>
 </div>
 </div>
+
+<script>
+  $(function(){
+  	     $('.blogbody').hide();
+    
+         $('.green').on('mouseover',function(){
+             $('.blogbody').show();
+         });
+  });
+</script>
 @endsection

@@ -14,7 +14,8 @@
 				</p>
 				<div class="row">
 					<div class="col-md-2">
-				  		<button class="btn btn-default"> Comments 
+				  		<button class="btn btn-default">      Comments 
+				         <span class="badge">{{$count}}</span>
 				  		</button>
 				    </div>
 				</div>
@@ -25,33 +26,43 @@
 				     {!!Form::open(['route'=>['comments.store',$post->id],'method'=>'POST'])!!}
 
 
+				     <input type="hidden" name='slug' value={{$post->slug}}></input>
+
+
 				     	<br>
+				     	<table class="table table-striped">
+				     	<tbody>
  						@foreach($comments as $comment)
  							
- 							    <i style="color:blue">{{$comment->name}} says:</i><br>{{$comment->comment}}
-                                
- 							    <hr>
- 							
+  							 <tr> <td> <i style="color:blue">{{$comment->name}} says:</i>
+ 							    {{$comment->comment}}
+ 							 </td></tr>
+                            
+ 
+
  						@endforeach
+ 						</tbody>
+ 						</table>
 				     
 				    @if(Auth::check())
 	
 				    <div class="row">
 				    	
-                    	<div class="col-md-8"
+                    	<div class="col-xs-8 col-md-10"
 				     	
 
-				     <input type="hidden" name='slug' value={{$post->slug}}>
 				     <i>{{ ucwords(Auth::user()->name)}} has to say</i>
 
-				     {{Form::textarea('comment',null,['class'=>'form-control','style'=>'height:50px','placeholder'=>'write your comment'])}}
+				     {{Form::text('comment',null,['class'=>'form-control','style'=>'height:20px','style'=>'height:30px','placeholder'=>'write your comment','id'=>'comment'])}}
 
 				     </div>
 
-				     <div class="col-sm-3">
+				     <div class="col-xs-4 col-md-2">
 				
 					   
-				     {{ Form::submit('post',array('class'=>'btn btn-primary btn-block','style'=>'margin-top:20px'))}}
+				     {{Form::submit('post',array('class'=>'btn','style'=>'margin-top:20px','id'=>'post'))}}
+
+				     	
 				     	</div>
 				     </div>
 

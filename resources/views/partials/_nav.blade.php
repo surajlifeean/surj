@@ -39,7 +39,7 @@
 
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello {{ ucwords(Auth::user()->name)}}<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="posts">Posts</a></li>
+            <li><a href="{{route('posts.index')}}">Posts</a></li>
             <li role="separator" class="divider"></li>
 
 

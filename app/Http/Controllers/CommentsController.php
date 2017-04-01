@@ -41,7 +41,7 @@ class CommentsController extends Controller
     public function store(Request $request,$post_id)
     {
         
-
+        //dd($request);
          $this->validate($request, array(
             'comment' => 'required|max:255'
             ));
