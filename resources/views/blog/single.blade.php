@@ -20,8 +20,8 @@
 				    </div>
 				</div>
 
- 					<div class="row comments">
- 						<div class="col-md-6">
+ 				<div class="row comments">
+ 						<div class="col-md-9">
 
 				     {!!Form::open(['route'=>['comments.store',$post->id],'method'=>'POST'])!!}
 
@@ -30,34 +30,43 @@
 
 
 				     	<br>
-				     	<table class="table table-striped">
-				     	<tbody>
  						@foreach($comments as $comment)
- 							
-  							 <tr> <td> <i style="color:blue">{{$comment->name}} says:</i>
- 							    {{$comment->comment}}
- 							 </td></tr>
+ 							<div class="author-info row">
+ 								<div class="col-md-3">
+ 							  <img src="{{'https://www.gravatar.com/avatar/'.md5(strtolower(trim($comment->email)))."?s=50&d=wavatar"}}" class="author-image">
+
+ 							  	</div>
+ 							  	<div class="col-md-6">
+ 							  
+  							 	<b style="color:blue">
+  							 	{{$comment->name}} 
+  							 		says:</b>
+ 							 	{{$comment->comment}}
+ 							 	</div>
+ 							 	<div class="col-md-3 author-time">
+ 							 		on {{date('jS M, Y', strtotime($post->created_at))}}
+ 							 	</div>
+ 							 </div>
                             
  
 
  						@endforeach
- 						</tbody>
- 						</table>
+ 						
 				     
 				    @if(Auth::check())
 	
 				    <div class="row">
 				    	
-                    	<div class="col-xs-8 col-md-10"
+                    	<div class="col-xs-8 col-md-10">
 				     	
 
 				     <i>{{ ucwords(Auth::user()->name)}} has to say</i>
 
 				     {{Form::text('comment',null,['class'=>'form-control','style'=>'height:20px','style'=>'height:30px','placeholder'=>'write your comment','id'=>'comment'])}}
 
-				     </div>
+				        </div>
 
-				     <div class="col-xs-4 col-md-2">
+				        <div class="col-xs-4 col-md-2">
 				
 					   
 				     {{Form::submit('post',array('class'=>'btn','style'=>'margin-top:20px','id'=>'post'))}}
