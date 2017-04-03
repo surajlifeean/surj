@@ -93,9 +93,20 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+    
+        //dd($request);
+        $comment=Comment::find($request->comment_id);
+
+        $comment->comment=$request->comment;
+
+        $comment->save();
+
+//        return redirect->route('tags.index');
+
+
+        return redirect()->route('blog.single',$request->slug);
     }
 
     /**

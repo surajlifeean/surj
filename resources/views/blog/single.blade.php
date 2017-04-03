@@ -4,6 +4,10 @@
 
 @include('blog.delete')
 
+@include('blog.edit')
+
+
+
 @section('content')
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
@@ -52,7 +56,7 @@
  							  		@if(Auth::user()->email == $comment->email)
 
 
- 							 	<a href="#" class="btn"> <span class="glyphicon glyphicon-pencil" data-toggle="tooltip" title="Edit!"> </span> </a>
+ 							 	<a href="#" class="btn" data-toggle="modal" data-target="#myModal2" onclick='setvalue({!!json_encode($comment->id)!!},{!!json_encode($post->slug)!!},{!!json_encode($comment->comment)!!})'> <span class="glyphicon glyphicon-pencil" data-toggle="tooltip" title="Edit!"> </span> </a>
 
 
  							 			<a href="" class="btn" data-toggle="modal" data-target="#myModal" onclick='setvalue({!!json_encode($comment->id)!!},{!!json_encode($post->slug)!!})'> <span class="glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete!" > </span> </a>

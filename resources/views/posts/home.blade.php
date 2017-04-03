@@ -7,11 +7,11 @@
 
          <div class="jumbotron darkslateblue bs-example">
             
-              <h1 class="animated infinite bounce" >Techies'foo</h1>
+              <h1 class="animated infinite bounce" ><span class="glyphicon glyphicon-console"></span>Techies'foo </h1>
             
               
               <p>
-              <a class="btn btn-primary btn-lg form-spacing-top" href="#myModal2" data-toggle="modal" role="button">How To Start?</a>
+              <a class="btn btn-lg btn-primary form-spacing-top" href="#myModal2" data-toggle="modal" role="button">How to start <span class="glyphicon glyphicon-triangle-right"></span></a>
               </p>
               @include('partials._demovideo')
 
