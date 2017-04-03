@@ -2,6 +2,8 @@
 
 @section('title',"|$post->title")
 
+@include('blog.delete')
+
 @section('content')
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
@@ -45,7 +47,23 @@
  							 	</div>
  							 	<div class="col-md-3 author-time">
  							 		on {{date('jS M, Y', strtotime($post->created_at))}}
+ 							 	
+ 							  @if(Auth::check())
+ 							  		@if(Auth::user()->email == $comment->email)
+
+
+ 							 	<a href="#" class="btn"> <span class="glyphicon glyphicon-pencil" data-toggle="tooltip" title="Edit!"> </span> </a>
+
+
+ 							 			<a href="" class="btn" data-toggle="modal" data-target="#myModal" onclick='setvalue({!!json_encode($comment->id)!!},{!!json_encode($post->slug)!!})'> <span class="glyphicon glyphicon-trash" data-toggle="tooltip" title="Delete!" > </span> </a>
+
+ 							 	    @endif
+
+
+ 							 @endif
+
  							 	</div>
+
  							 </div>
                             
  
@@ -91,6 +109,12 @@
 		$("button").click(function(){
 			$(".comments").toggle();
 		});
+
+		
+
+    $('[data-toggle="tooltip"]').tooltip();   
+
+
 	});
 </script>
 

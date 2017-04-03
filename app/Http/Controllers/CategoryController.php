@@ -111,7 +111,11 @@ class CategoryController extends Controller
 
         $categories=Category::find($id);
 
-        $categories->delete();
+        $categories->name='nothing';
+
+        //$categories->delete();
+        $categories->save();
+        
 
         Session::flash('Success','The Category is deleted');
 

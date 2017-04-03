@@ -7,7 +7,7 @@
 
          <div class="jumbotron darkslateblue bs-example">
             
-              <h1 class="animated infinite bounce" >Techie'sfoo</h1>
+              <h1 class="animated infinite bounce" >Techies'foo</h1>
             
               
               <p>

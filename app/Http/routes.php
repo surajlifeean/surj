@@ -48,5 +48,9 @@ Route::post('auth/register','Auth\AuthController@postRegister');
 
  Route::post('comments/{post_id}',['uses'=>'CommentsController@store','as'=>'comments.store']);
 
+ Route::get('comments/{id}/edit',['uses'=>'CommentsController@edit','as'=>'comments.edit']);
+
+ Route::post('comments',['uses'=>'CommentsController@destroy','as'=>'comments.destroy']);
+
  
 ?>

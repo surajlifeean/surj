@@ -21,6 +21,7 @@
           {{$tag->name}}</span>
         @endforeach
       </div>
+
 	  </div>
   
 	<div class="col-md-4">
@@ -43,7 +44,7 @@
 
               <label> Category:</label>
               <p>
-              {{$post->category->name}}
+                 {{$post->category->name}}
               </p>
            </dl>
 
