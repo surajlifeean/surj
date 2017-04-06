@@ -8,6 +8,19 @@
 
     {!!Html::style('css/select2.css')!!}
 
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"> </script>
+
+    <script>tinymce.init({
+     selector:'textarea' ,
+     plugins: "link",
+     menubar:false
+     
+     
+
+     });
+     </script>
+     
+
 @endsection
 
 @section('content')
@@ -51,7 +64,7 @@
 
     {{ Form::label('body',"Post Body:",array('class'=>'form-spacing-top'))}}
 
-    {{ Form::textarea('body',null,array('class'=>'form-control','required'=>''))}}
+    {{ Form::textarea('body',null,array('class'=>'form-control'))}}
 
 
     {{ Form::submit('create post',array('class'=>'btn btn-success btn-lg btn-block','style'=>'margin-top:20px'))}}

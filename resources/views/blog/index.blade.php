@@ -26,7 +26,7 @@
 	<h5 class="green"><b>Posted By:{{$post->name}}</b><br>Published on:{{ date('M j,Y', strtotime($post->created_at)) }} <br><i>Category:{{$post->category->name}}</i></h5>
 
 	<p class="blogbody animated bounceInLeft">
-	{{substr($post->body,0,250)}}  {{strlen($post->body)>250?"...":""}}
+	{!!substr($post->body,0,250)!!}  {{strlen($post->body)>250?"...":""}}
 	</p>
 
 	<a href="{{route('blog.single', $post->slug)}}">Read More</a>

@@ -90,7 +90,7 @@ class PostController extends Controller
 
         $post->category_id=$request->category_id;
 
-        $post->body = $request->body;
+        $post->body = Purifier::clean($request->body);
 
         $post->users_id = Auth::user()->id;
 
@@ -207,7 +207,7 @@ class PostController extends Controller
   
 
 
-         $post->body=$request->input('body');
+         $post->body=Purifier::clean($request->body);
          $post->save();
          
          if(isset($request->tags)){

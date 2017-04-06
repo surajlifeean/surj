@@ -26,7 +26,7 @@
        <div class="col-md-8" >
          <div class="post">
            <h1 id="process">{{ucwords($post->title)}}  </h1>
-             <p>{{substr($post->body,0,200)}}{{strlen($post->body)>200? "...":""}}</p>
+             <p>{{substr(strip_tags($post->body),0,200)}}{{strlen(strip_tags($post->body))>200? "...":""}}</p>
               <p><a class="btn btn-primary" href="{{url('blog/'.$post->slug)}}" role="button">read more</a></p>
               <hr>
          </div>

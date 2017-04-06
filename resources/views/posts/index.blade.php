@@ -34,7 +34,7 @@
   			<th>{{$post->id}}</th>
   			<td>{{$post->title}}</td>
   			<td>
-  			{{substr($post->body,0,50)}} 
+  			{!!substr($post->body,0,50)!!} 
   			{{(strlen($post->body))>50? '...':''}}
   			</td>
   			<td>{{date('jS F,Y', strtotime($post->created_at))}}</td>

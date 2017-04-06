@@ -6,7 +6,7 @@ use App\Post;
 
  	public function getIndex(){
 
- 		$posts=Post::orderBy('created_at','desc')->limit(4)->get();
+ 		$posts=Post::orderBy('updated_at','desc')->limit(5)->get();
  		return view('posts.home')->withPosts($posts);
  	}
 
